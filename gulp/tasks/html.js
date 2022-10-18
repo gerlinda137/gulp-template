@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const htmlValidator = require('gulp-w3c-html-validator')
+//const htmlValidator = require('gulp-w3c-html-validator')
 const bemValidator = require('gulp-html-bem-validator')
 
 module.exports = function html() {
@@ -7,7 +7,8 @@ module.exports = function html() {
     .src(["src/*.html"], {
       base: "src",
     })
-    .pipe(htmlValidator())
+    // .pipe(htmlValidator().analyzer())
+    // .pipe(htmlValidator().reporter())
     .pipe(bemValidator())
     .pipe(gulp.dest("build"));
 };
